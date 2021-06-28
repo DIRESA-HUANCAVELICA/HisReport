@@ -1,0 +1,20 @@
+SELECT Establec.institucio, Disa.desc_disa, Red.desc_red,;
+  Microred.desc_micro, Nucleo.desc_nuc, Establec.cod_estab,;
+  Establec.desc_estab;
+ FROM ;
+     red ;
+    INNER JOIN microred ;
+   ON  Red.cod_red = Microred.cod_red;
+   AND  Red.cod_disa = Microred.cod_disa ;
+    INNER JOIN disa ;
+   ON  Disa.cod_disa = Red.cod_disa ;
+    INNER JOIN nucleo ;
+   ON (  Microred.cod_disa = Nucleo.cod_disa;
+   AND  Microred.cod_red = Nucleo.cod_red );
+   AND  Microred.cod_mic = Nucleo.cod_mic ;
+    INNER JOIN establec ;
+   ON ( (  Nucleo.cod_disa = Establec.cod_disa;
+   AND  Nucleo.cod_red = Establec.cod_red );
+   AND  Nucleo.cod_mic = Establec.cod_mic );
+   AND  Nucleo.cod_nuc = Establec.cod_nuc;
+ WHERE  Establec.cod_disa = ( "13" )

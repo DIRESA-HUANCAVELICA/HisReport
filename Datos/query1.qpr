@@ -1,0 +1,10 @@
+SELECT DISTINCT His3.idpersonal, Personal.numdoc, Profesio.desc_prof,;
+  Eesshis.renipress, Eesshis.eess, Eesshis.microred, Eesshis.red;
+ FROM ;
+     his3 ;
+    LEFT OUTER JOIN personal ;
+   ON  His3.idpersonal = Personal.id ;
+    INNER JOIN profesio ;
+   ON  Personal.idprof = Profesio.cod_prof ;
+    INNER JOIN eesshis ;
+   ON  His3.id_eess = Eesshis.id_eess

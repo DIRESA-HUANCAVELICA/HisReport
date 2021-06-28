@@ -1,0 +1,24 @@
+SELECT Red.desc_red, Microred.desc_micro, Itm3.renipress,;
+  Establec.desc_estab, Itm3.id_ups, Servsal.desc_servs, Itm3.item_id,;
+  Itm3.campo_id, SUM(Itm3.valor);
+ FROM ;
+     itm3 ;
+    LEFT OUTER JOIN servsal ;
+   ON  Itm3.id_ups = Servsal.cod_servsa ;
+    INNER JOIN establec ;
+   ON  Itm3.renipress = Establec.cod_estab ;
+    INNER JOIN microred ;
+   ON (  Establec.cod_disa = Microred.cod_disa;
+   AND  Establec.cod_red = Microred.cod_red );
+   AND  Establec.cod_mic = Microred.cod_mic ;
+    INNER JOIN red ;
+   ON  Microred.cod_disa = Red.cod_disa;
+   AND  Microred.cod_red = Red.cod_red;
+ WHERE  Itm3.estrategia = ( "01" );
+   AND  ( reporte ) = ( "B" );
+ GROUP BY Red.desc_red, Microred.desc_micro, Itm3.renipress,;
+  Establec.desc_estab, Itm3.id_ups, Servsal.desc_servs, Itm3.item_id,;
+  Itm3.campo_id;
+ ORDER BY Red.desc_red, Microred.desc_micro, Itm3.renipress,;
+  Establec.desc_estab, Itm3.id_ups, Servsal.desc_servs, Itm3.item_id,;
+  Itm3.campo_id

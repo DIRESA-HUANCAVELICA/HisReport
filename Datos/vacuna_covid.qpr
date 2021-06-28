@@ -1,0 +1,24 @@
+SELECT His3.idcita, His3.numdoc, Establec.institucio, Red.desc_red,;
+  Microred.desc_micro, Nucleo.desc_nuc, His3.renipress,;
+  Establec.desc_estab, His3.fecha, His3.edad1, His3.sx;
+ FROM ;
+     his3 ;
+    INNER JOIN establec ;
+   ON  His3.renipress = Establec.cod_estab ;
+    INNER JOIN nucleo ;
+   ON ( (  Nucleo.cod_disa = Establec.cod_disa;
+   AND  Nucleo.cod_red = Establec.cod_red );
+   AND  Nucleo.cod_mic = Establec.cod_mic );
+   AND  Nucleo.cod_nuc = Establec.cod_nuc ;
+    INNER JOIN microred ;
+   ON (  Microred.cod_disa = Nucleo.cod_disa;
+   AND  Microred.cod_red = Nucleo.cod_red );
+   AND  Microred.cod_mic = Nucleo.cod_mic ;
+    INNER JOIN red ;
+   ON  Red.cod_disa = Microred.cod_disa;
+   AND  Red.cod_red = Microred.cod_red ;
+    INNER JOIN disa ;
+   ON  Disa.cod_disa = Red.cod_disa;
+ WHERE  His3.dx = ( "90749.01" );
+   AND  His3.lc = ( "1" );
+ ORDER BY His3.id_eess

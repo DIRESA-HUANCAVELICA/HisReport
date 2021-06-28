@@ -1,0 +1,10 @@
+HisReport 2021 2021-06-01
+
+------------------------------------------------------------------------------------
+HisReport 2021 01-05-2021
+Se ha modificado y/o actualizado los reportes de:
+	* Niño
+	* Adolescente
+	* No transmisibles
+	* Salud Mental
+------------------------------------------------------------------------------------
